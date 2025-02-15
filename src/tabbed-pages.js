@@ -60,4 +60,9 @@ export default function createPage(container) {
             container.appendChild(header);
         }
     }
+
+    // Change primary colors
+    const root = document.documentElement;
+    root.style.setProperty("--color-primary", "#00bfc6");
+    root.style.setProperty("--color-secondary", "#f1f1f1");
 }
