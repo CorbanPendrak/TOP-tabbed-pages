@@ -1,0 +1,29 @@
+svg {
+	width: fit-content;
+	height: fit-content;
+	margin-top: 10px;
+}
+
+svg text {
+	animation: stroke 5s infinite alternate;
+	stroke-width: 0.5;
+	fill-opacity: 0;
+	stroke: var(--color-primary);
+	font-size: 4em;
+}
+
+@keyframes stroke {
+	0%   {
+		stroke-dashoffset: 25%;
+		stroke-dasharray: 0 50%;
+		stroke-width: 0.5;
+	}
+	75%  {
+		stroke-width: 1;
+	}
+	100% {
+		stroke-width: 0.9;
+		stroke-dashoffset: -25%;
+		stroke-dasharray: 50% 0;
+	}
+}
