@@ -7,15 +7,39 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-	margin-top: 0;
+	margin-top: 60px;
 	background-color: var(--color-secondary);
 }
 
 #tabbed-navigation {
+	position: fixed;
+	top: 0;
+	left: auto;
+	z-index: 1000;
 	display: flex;
 	justify-content: center;
 	gap: 20px;
-	width: 80%;
+	width: 100%;
+	border-radius: 10%;
+}
+
+.backdrop {
+	position: absolute;
+	inset: 0;
+	height: 200%;
+	border-radius: 4px;
+	background: linear-gradient(
+		to bottom,
+		var(--color-secondary) 0%,
+		transparent 50%,
+	);
+	pointer-events: none;
+	backdrop-filter: blur(6px);
+	mask-image: linear-gradient(
+			black 0,
+			black 50%,
+			transparent 50%
+	);
 }
 
 .tabbed-button {
@@ -25,9 +49,10 @@ body {
 	border-style: none;
 	border-radius: 0 0 50% 50%;
 
-	padding: 30px 20px;
-	width: 20%;
+	height: 50px;
+	width: 150px;
 	font-size: 1.1em;
+	z-index: 1;
 }
 
 #content {

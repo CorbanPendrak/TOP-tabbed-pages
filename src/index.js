@@ -1,9 +1,16 @@
-import { greeting } from './greeting.js';
+import createTabbedPage from './tabbed-pages.js';
+import createWebpackPage from './webpack-page.js';
 import "./index.css"
 
-console.log(greeting);
+const content = document.getElementById("content");
+createTabbedPage(content);
 
-// Create Tabbed page
-import createTabbedPage from './tabbed-pages.js';
+document.getElementById("page1").addEventListener("click", () => {
+    content.innerHTML = "";
+    createTabbedPage(content);
+});
 
-createTabbedPage(document.getElementById("content"));
+document.getElementById("page2").addEventListener("click", () => {
+    content.innerHTML = "";
+    createWebpackPage(content);
+})
