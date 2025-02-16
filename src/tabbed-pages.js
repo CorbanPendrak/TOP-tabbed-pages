@@ -19,10 +19,11 @@ export default function createPage(container) {
     // SVG text animation
     const svgTexts = ["Tabbed Pages", "By Corban Pendrak"];
     let index = 0;
-    let alternating = true;
+    let alternating = false;
     svgText.textContent = svgTexts[index];
     svgText.addEventListener("animationiteration", () => {
         alternating = !alternating;
+
         if (alternating) {
            return;
         }
